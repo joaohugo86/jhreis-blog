@@ -1,21 +1,14 @@
 {
-  "name": "meu-blog",
+  "name": "jhreis-blog",
   "type": "module",
   "version": "0.2.2",
-  "description": "Minimalist, typography-first Astro 7 theme crafted for technical writers and Obsidian vaults. Pure SSG, zero bloat.",
+  "description": "Blog pessoal do JH Reis, feito em Astro. Site estático, conteúdo em Markdown.",
   "engines": {
     "node": ">=22.12.0"
   },
-  "author": "Renato Rezende (https://github.com/rnt-rez)",
+  "author": "JH Reis (https://github.com/joaohugo86)",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rnt-rez/minrock.git"
-  },
-  "bugs": {
-    "url": "https://github.com/rnt-rez/minrock/issues"
-  },
-  "homepage": "https://github.com/rnt-rez/minrock#readme",
+  "homepage": "https://jhreis.com",
   "keywords": [
     "astro",
     "astro-theme",

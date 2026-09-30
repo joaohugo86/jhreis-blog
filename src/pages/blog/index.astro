@@ -12,17 +12,17 @@ const allTags = Array.from(new Set(allPosts.flatMap((p) => p.data.tags || []))).
 const showTags = siteConfig.features?.tags !== false;
 ---
 
-<BaseLayout title="Blog — All Notes">
+<BaseLayout title="Blog — Todas as notas">
   <div class="blog-page">
     <header class="blog-header">
-      <h1 class="page-title">Articles &amp; Notes</h1>
+      <h1 class="page-title">Alguns pensamentos</h1>
       <p class="page-desc">
-        Explorations in software engineering, technical writing, and minimalist design.
+        Escrever é uma maneira de falar sem ser interrompido
       </p>
 
       {showTags && allTags.length > 0 && (
         <div class="tags-filter">
-          <span class="tags-label">Topics:</span>
+          <span class="tags-label">tópicos:</span>
           {allTags.map((tag) => (
             <a href={`/tags/${tag}`} class="tag-pill">#{tag}</a>
           ))}
@@ -33,7 +33,7 @@ const showTags = siteConfig.features?.tags !== false;
     <section class="articles-section">
       <div class="section-header">
         <h2 class="section-title">
-          <span>All Articles</span>
+          <span>Meus pensamentos</span>
           <span class="section-arrow">→</span>
         </h2>
 
@@ -47,8 +47,8 @@ const showTags = siteConfig.features?.tags !== false;
             <input
               type="text"
               id="search-input"
-              placeholder="Filter articles..."
-              aria-label="Filter articles"
+              placeholder="Buscar"
+              aria-label="Buscar"
               autocomplete="off"
             />
           </div>
@@ -71,15 +71,15 @@ const showTags = siteConfig.features?.tags !== false;
 
       <!-- Bottom Pagination -->
       <div class="pagination-container pagination-bottom" id="pagination-bottom" style="display: none;">
-        <nav class="pagination-bar" aria-label="Bottom article pagination">
-          <button type="button" class="pagination-btn prev" id="page-prev-bottom" aria-label="Previous page">←</button>
+        <nav class="pagination-bar" aria-label="Paginação dos artigos">
+          <button type="button" class="pagination-btn prev" id="page-prev-bottom" aria-label="Página anterior">←</button>
           <div class="pagination-pages" id="pagination-pages-bottom"></div>
-          <button type="button" class="pagination-btn next" id="page-next-bottom" aria-label="Next page">→</button>
+          <button type="button" class="pagination-btn next" id="page-next-bottom" aria-label="Próxima página">→</button>
         </nav>
       </div>
 
       <div id="no-results" class="no-results" style="display: none;">
-        <p>No articles found matching your filter.</p>
+        <p>Nenhum artigo encontrado para esse filtro.</p>
       </div>
     </section>
   </div>
@@ -134,7 +134,7 @@ const showTags = siteConfig.features?.tags !== false;
           btn.type = 'button';
           btn.className = `pagination-num${i === currentPage ? ' active' : ''}`;
           btn.textContent = String(i);
-          btn.setAttribute('aria-label', `Page ${i}`);
+          btn.setAttribute('aria-label', `Página ${i}`);
           btn.addEventListener('click', () => {
             currentPage = i;
             renderPagination();

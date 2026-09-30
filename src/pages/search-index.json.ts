@@ -35,9 +35,9 @@ export async function GET() {
       title: p.data.title,
       description: p.data.description,
       url: `/blog/${p.id}`,
-      date: p.data.pubDate.toLocaleDateString('en-US', {
-        month: 'short',
-        day: 'numeric',
+      date: p.data.pubDate.toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
         year: 'numeric',
       }),
       tags: p.data.tags || [],
@@ -48,8 +48,8 @@ export async function GET() {
       title: p.data.title,
       description: p.data.description,
       url: `/projects/${p.id}`,
-      date: p.data.date.toLocaleDateString('en-US', {
-        month: 'short',
+      date: p.data.date.toLocaleDateString('pt-BR', {
+        month: '2-digit',
         year: 'numeric',
       }),
       tags: p.data.tags || [],

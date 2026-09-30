@@ -69,8 +69,8 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  title: 'jh reis, me blog',
-  tagline: 'Raw ideas from your personal vault, finely polished into an ultra-fast static blog.',
+  title: 'jh reis',
+  tagline: 'Compartilho aprendizados, experiências e curiosidades sobre tecnologia, produto, operações, construção de negócios, infraestrutura e as vezes futebol.',
   description: 'apenas uma área onde escrevo coisas que acho interessante',
   author: 'JH Reis',
   // Substitua pelo seu domínio de produção (usado para SEO Canônico, OpenGraph e RSS)
@@ -93,16 +93,13 @@ export const siteConfig: SiteConfig = {
     comments: true
   },
   socialLinks: {
-    github: 'https://github.com/rnt-rez/minrock',
-    linkedin: 'https://example.com/',
-    email: 'https://example.com/'
+    github: 'https://github.com/joaohugo86'
   },
   navLinks: [
     { title: 'Home', href: '/' },
     { title: 'Blog', href: '/blog' },
-    { title: 'Projects', href: '/projects' },
-    { title: 'Tags', href: '/tags' },
-    { title: 'About', href: '/about' }
+    { title: 'Projetos', href: '/projects' },
+    { title: 'Sobre', href: '/about' }
   ],
   comments: {
     enabled: true,

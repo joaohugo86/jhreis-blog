@@ -5,12 +5,12 @@
  */
 
 const DEFAULT_TITLES = {
-  note: 'Note',
-  tip: 'Tip',
-  important: 'Important',
-  warning: 'Warning',
-  caution: 'Caution',
-  danger: 'Danger',
+  note: 'Nota',
+  tip: 'Dica',
+  important: 'Importante',
+  warning: 'Atenção',
+  caution: 'Cuidado',
+  danger: 'Perigo',
   info: 'Info',
 };
 

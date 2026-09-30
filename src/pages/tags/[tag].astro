@@ -36,8 +36,8 @@ const totalCount = posts.length + projects.length;
 ---
 
 <BaseLayout
-  title={`#${tag} | Minrock`}
-  description={`Browse content tagged with #${tag}`}
+  title={`#${tag}`}
+  description={`Conteúdo com a tag #${tag}`}
 >
   <header class="tag-header">
     <div class="tag-breadcrumb">
@@ -45,13 +45,13 @@ const totalCount = posts.length + projects.length;
       <span class="sep">/</span>
       <span class="current">#{tag}</span>
     </div>
-    <h1 class="tag-title">Content tagged with <span class="highlight">#{tag}</span></h1>
-    <p class="tag-count">{totalCount} {totalCount === 1 ? 'item' : 'items'} found ({posts.length} articles, {projects.length} projects)</p>
+    <h1 class="tag-title">Conteúdo com a tag <span class="highlight">#{tag}</span></h1>
+    <p class="tag-count">{totalCount} {totalCount === 1 ? 'item encontrado' : 'itens encontrados'} ({posts.length} {posts.length === 1 ? 'artigo' : 'artigos'}, {projects.length} {projects.length === 1 ? 'projeto' : 'projetos'})</p>
   </header>
 
   {posts.length > 0 && (
     <section class="tag-section">
-      <h2 class="section-title">Articles ({posts.length})</h2>
+      <h2 class="section-title">Artigos ({posts.length})</h2>
       <div class="posts-list">
         {posts.map((post) => (
           <ArticleCard post={post} />
@@ -62,7 +62,7 @@ const totalCount = posts.length + projects.length;
 
   {projects.length > 0 && (
     <section class="tag-section projects-tag-section">
-      <h2 class="section-title">Projects ({projects.length})</h2>
+      <h2 class="section-title">Projetos ({projects.length})</h2>
       <div class="projects-grid">
         {projects.map((proj) => (
           <ProjectCard

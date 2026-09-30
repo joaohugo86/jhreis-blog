@@ -29,23 +29,18 @@ const topTags = [...tagsMap.entries()]
 <BaseLayout>
   <section class="hero">
     <h1 class="hero-title">
-      Crafted for deep thinking &amp; technical writing.
+      Pensamentos, ideias e algo mais.
     </h1>
     <p class="hero-subtitle">
       {siteConfig.tagline}
     </p>
-    <div class="hero-actions">
-      <a href="/blog" class="btn btn-primary">Read Articles →</a>
-      <a href="/projects" class="btn btn-secondary">Explore Projects</a>
-      <a href="/about" class="btn btn-tertiary">About Minrock</a>
-    </div>
   </section>
 
   <!-- Latest Notes -->
   <section class="recent-posts">
     <div class="section-header">
-      <h2 class="section-title">Latest Articles</h2>
-      <a href="/blog" class="all-link">View all ({allPosts.length}) →</a>
+      <h2 class="section-title">Últimas</h2>
+      <a href="/blog" class="all-link">Veja todas ({allPosts.length}) →</a>
     </div>
 
     <div class="posts-list">
@@ -59,8 +54,8 @@ const topTags = [...tagsMap.entries()]
   {featuredProjects.length > 0 && (
     <section class="featured-projects">
       <div class="section-header">
-        <h2 class="section-title">Featured Projects</h2>
-        <a href="/projects" class="all-link">All projects ({allProjects.length}) →</a>
+        <h2 class="section-title">Projetos</h2>
+        <a href="/projects" class="all-link">Todos os projetos ({allProjects.length}) →</a>
       </div>
 
       <div class="projects-grid">
@@ -86,8 +81,8 @@ const topTags = [...tagsMap.entries()]
   {siteConfig.features?.tags !== false && topTags.length > 0 && (
     <section class="home-tags-section">
       <div class="section-header">
-        <h2 class="section-title">Explore by Topics</h2>
-        <a href="/tags" class="all-link">All tags ({topTags.length}) →</a>
+        <h2 class="section-title">Explore por tópicos</h2>
+        <a href="/tags" class="all-link">Todos os tópicos ({topTags.length}) →</a>
       </div>
 
       <div class="tags-cloud">

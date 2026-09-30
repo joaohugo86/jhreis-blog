@@ -7,19 +7,19 @@ const allProjects = (await getCollection('projects'))
   .sort((a, b) => b.data.stars - a.data.stars || b.data.date.valueOf() - a.data.date.valueOf());
 
 const topProjects = allProjects.filter((p) => p.data.featured).slice(0, 2);
-const categories = ['All', ...new Set(allProjects.map((p) => p.data.category))];
+const categories = ['Todos', ...new Set(allProjects.map((p) => p.data.category))];
 ---
 
-<BaseLayout title="Projects" description="Open-source tools, themes, and developer utilities.">
+<BaseLayout title="Projetos" description="Ideias que foram materializadas.">
   <div class="projects-container">
     <header class="page-header">
-      <h1 class="page-title">Projects</h1>
-      <p class="page-subtitle">Open-source tools, themes, and developer utilities.</p>
+      <h1 class="page-title">Projetos</h1>
+      <p class="page-subtitle">Ideias que foram materializadas.</p>
     </header>
 
     {topProjects.length > 0 && (
       <section class="featured-section">
-        <h2 class="section-title">Highlights &amp; Featured</h2>
+        <h2 class="section-title">Destaques</h2>
         <div class="featured-grid">
           {topProjects.map((proj) => (
             <ProjectCard
@@ -42,7 +42,7 @@ const categories = ['All', ...new Set(allProjects.map((p) => p.data.category))];
     <section class="all-projects-section" id="projects-list-section">
       <div class="section-header">
         <h2 class="section-title">
-          <span>All Projects</span>
+          <span>Todos os projetos</span>
           <span class="section-arrow">→</span>
         </h2>
 
@@ -56,8 +56,8 @@ const categories = ['All', ...new Set(allProjects.map((p) => p.data.category))];
             <input
               type="text"
               id="search-input"
-              placeholder="Filter projects..."
-              aria-label="Filter projects"
+              placeholder="Filtrar projetos..."
+              aria-label="Filtrar projetos"
               autocomplete="off"
             />
           </div>
@@ -65,11 +65,11 @@ const categories = ['All', ...new Set(allProjects.map((p) => p.data.category))];
       </div>
 
       <!-- Category Filter Pills -->
-      <div class="filter-bar" role="group" aria-label="Filter by category">
+      <div class="filter-bar" role="group" aria-label="Filtrar por categoria">
         {categories.map((cat) => (
           <button
             type="button"
-            class={`filter-btn${cat === 'All' ? ' active' : ''}`}
+            class={`filter-btn${cat === 'Todos' ? ' active' : ''}`}
             data-category={cat}
           >
             {cat}
@@ -105,15 +105,15 @@ const categories = ['All', ...new Set(allProjects.map((p) => p.data.category))];
 
       <!-- Bottom Pagination -->
       <div class="pagination-container pagination-bottom" id="pagination-bottom" style="display: none;">
-        <nav class="pagination-bar" aria-label="Bottom projects pagination">
-          <button type="button" class="pagination-btn prev" id="page-prev-bottom" aria-label="Previous page">←</button>
+        <nav class="pagination-bar" aria-label="Paginação dos projetos">
+          <button type="button" class="pagination-btn prev" id="page-prev-bottom" aria-label="Página anterior">←</button>
           <div class="pagination-pages" id="pagination-pages-bottom"></div>
-          <button type="button" class="pagination-btn next" id="page-next-bottom" aria-label="Next page">→</button>
+          <button type="button" class="pagination-btn next" id="page-next-bottom" aria-label="Próxima página">→</button>
         </nav>
       </div>
 
       <div id="no-results" class="no-results" style="display: none;">
-        <p>No projects found matching your filter.</p>
+        <p>Nenhum projeto encontrado para esse filtro.</p>
       </div>
     </section>
   </div>
@@ -133,7 +133,7 @@ const categories = ['All', ...new Set(allProjects.map((p) => p.data.category))];
 
     const PAGE_SIZE = 3;
     let currentPage = 1;
-    let currentCategory = 'All';
+    let currentCategory = 'Todos';
     let searchQuery = '';
     let matchingItems: HTMLElement[] = [...projectItems];
 
@@ -170,7 +170,7 @@ const categories = ['All', ...new Set(allProjects.map((p) => p.data.category))];
           btn.type = 'button';
           btn.className = `pagination-num${i === currentPage ? ' active' : ''}`;
           btn.textContent = String(i);
-          btn.setAttribute('aria-label', `Page ${i}`);
+          btn.setAttribute('aria-label', `Página ${i}`);
           btn.addEventListener('click', () => {
             currentPage = i;
             renderPagination();
@@ -193,7 +193,7 @@ const categories = ['All', ...new Set(allProjects.map((p) => p.data.category))];
         const desc = item.dataset.description || '';
         const tags = item.dataset.tags || '';
 
-        const matchesCat = currentCategory === 'All' || cat === currentCategory;
+        const matchesCat = currentCategory === 'Todos' || cat === currentCategory;
         const matchesSearch = !query || title.includes(query) || desc.includes(query) || tags.includes(query);
         return matchesCat && matchesSearch;
       });
@@ -226,7 +226,7 @@ const categories = ['All', ...new Set(allProjects.map((p) => p.data.category))];
       btn.addEventListener('click', () => {
         filterBtns.forEach((b) => b.classList.remove('active'));
         btn.classList.add('active');
-        currentCategory = btn.dataset.category || 'All';
+        currentCategory = btn.dataset.category || 'Todos';
         applyFilters();
       });
     });
